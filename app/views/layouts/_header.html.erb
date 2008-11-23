@@ -1,0 +1,13 @@
+<div id="head">
+  <div id="head-id">
+    <h1><%= current_view_title %></h1>
+  </div>
+  <div id="head-action">
+    <span style="margin-right: 20px;">
+    <!-- <small>logged in as <%= h(current_user.email) if logged_in?%> | <%= link_to "logout", logout_url %></small> -->
+    </span>
+    <%= link_to "new item", new_item_path, :class => "new_item" %>
+    <%= link_to "exit", logout_url, :class => "exit" %>
+  </div>
+  <div class="clear"></div>
+</div>

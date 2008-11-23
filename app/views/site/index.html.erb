@@ -1,0 +1,32 @@
+<% columns = 13 %>
+<% grid_helper = new_grid_helper(@roots, columns) %>
+
+<div id="tiles">
+
+  <% grid_helper.each_slice(columns) do |items| %>
+    <% items.each do |item| %>
+      <% unless item == (-1) || item == 0 || item.nil? %>
+      <div class="tile <%= tile_sizer(item) %>" style="background: url(<%= item.file.url %>);">
+        <h2><%= item.title %></h2>
+        <div class="tags">
+        <%= link_to 'Show', item %>
+        <%= link_to 'Edit', edit_item_path(item) %>
+        <%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
+        </div>
+        <% kids = item.children %>
+        <% for k in kids %>
+          <div class="microtile">
+            <%= k.title %>
+            (<%= k.children.size %>)
+            <%= link_to 'Show', k %>
+            <%= link_to 'Edit', edit_item_path(k) %>
+            <%= link_to 'Destroy', k, :confirm => 'Are you sure?', :method => :delete %>          
+          </div>
+        <% end %>
+      <% end %>    
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="clear"></div>
+</div>

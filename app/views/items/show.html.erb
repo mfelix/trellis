@@ -1,0 +1,14 @@
+<div id="tiles">
+
+  <% if @item.root? %>
+    <% kids = @item.children %>
+    <% for k in kids %>
+      <%= render :partial => "tile", :locals => {:item => k} %>
+    <% end %>
+  <% else %>
+      <%= render :partial => "tile", :locals => {:item => @item} %>
+  <% end %>
+  
+
+  <div class="clear"></div>
+</div>
