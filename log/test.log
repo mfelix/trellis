@@ -1,0 +1,94 @@
+Unable to load chri, underlying cause no such file to load -- chri 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:102:in `require_or_load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:61:in `depend_on'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:457:in `require_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:855:in `try_to_load_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:870:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:850:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/chris_test.rb:1:in `require'
+./test/unit/chris_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.000323)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.000393)[0m   [0mSET client_min_messages TO 'notice'[0m
+Unable to load object, underlying cause no such file to load -- object 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:102:in `require_or_load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:61:in `depend_on'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:457:in `require_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:855:in `try_to_load_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:870:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:850:in `fixtures'
+./test/test_helper.rb:35
+./test/unit/chris_test.rb:1:in `require'
+./test/unit/chris_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.000197)[0m   [0;1mROLLBACK[0m
+Unable to load chri, underlying cause no such file to load -- chri 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:102:in `require_or_load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:61:in `depend_on'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:457:in `require_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:855:in `try_to_load_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:870:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:850:in `fixtures'
+./test/test_helper.rb:35
+./test/functional/collections_controller_test.rb:1:in `require'
+./test/functional/collections_controller_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.000203)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.000130)[0m   [0mSET client_min_messages TO 'notice'[0m
+Unable to load object, underlying cause no such file to load -- object 
+
+ /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:102:in `require_or_load'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:61:in `depend_on'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:457:in `require_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:855:in `try_to_load_dependency'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:870:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:867:in `require_fixture_classes'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/fixtures.rb:850:in `fixtures'
+./test/test_helper.rb:35
+./test/functional/collections_controller_test.rb:1:in `require'
+./test/functional/collections_controller_test.rb:1
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `load'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rake-0.8.1/lib/rake/rake_test_loader.rb:5
+  [4;36;1mSQL (0.000159)[0m   [0;1mROLLBACK[0m

@@ -1,14 +1,7 @@
-<div id="tiles">
+<%- content_for :head do %>
+  <h1><%= current_view_title(@item) %></h1>
+<%- end %>
 
-  <% if @item.root? %>
-    <% kids = @item.children %>
-    <% for k in kids %>
-      <%= render :partial => "tile", :locals => {:item => k} %>
-    <% end %>
-  <% else %>
-      <%= render :partial => "tile", :locals => {:item => @item} %>
-  <% end %>
-  
+<%= render :partial => "tile", :locals => { :tile => @item } %>
 
-  <div class="clear"></div>
-</div>
+<%= render :partial => "tile", :collection => @item.children %>

@@ -18,6 +18,7 @@ module ItemsHelper
     @grid.grid
   end
   
+  
   class Grid_helper
 
     def initialize(columns)
@@ -37,8 +38,8 @@ module ItemsHelper
 
     def insert(array)
       array.each do |item|
-        # raise "#{item} does not have a size" if item.width.nil? || item.height.nil?
-        # raise "#{item} is too large!!" if item.width > @columns
+        raise "#{item} does not have a size" if item.size.nil?
+        raise "#{item} is too large!!" if item.width > @columns
         y, x = free_space_for(item.size)
         item.size.times do |row|
           item.size.times do |col|

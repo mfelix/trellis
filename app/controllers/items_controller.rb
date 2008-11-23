@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.erb (also, erb sucks)
       format.xml  { render :xml => @item }
     end
   end
@@ -49,6 +49,8 @@ class ItemsController < ApplicationController
     
     respond_to do |format|
       if @item.save
+        @item.move_to_child_of params[:parent_id] unless params[:parent_id].blank?
+        
         flash[:notice] = 'Item was successfully created.'
         format.html { redirect_to(@item) }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
@@ -56,10 +58,7 @@ class ItemsController < ApplicationController
         format.html { render :action => "new" }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
-    end
-    
-    parent = params[:parent_id]
-    @item.move_to_child_of parent
+    end    
   end
 
   # PUT /items/1
