@@ -5,9 +5,8 @@ class Item < ActiveRecord::Base
   belongs_to :collection
   belongs_to :user
   
-  has_attached_file :image
-  has_attached_file :audio
-  
+  has_attached_file :file
+
   acts_as_nested_set
   
 end
