@@ -8,10 +8,13 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :file %><br />
-    <%= f.file_field :file %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </p>
-
+  <p>
+    <%= f.label :audio_attachment_embed %><br />
+    <%= f.text_field :audio_attachment_embed %>
+  </p>
   <p>
     <%= f.label :parent %><br />
     <%= @collections[0].title %>

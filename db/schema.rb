@@ -9,7 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081118045151) do
+ActiveRecord::Schema.define(:version => 20090316034555) do
+
+  create_table "attachments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "collections", :force => true do |t|
     t.datetime "created_at"
@@ -36,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20081118045151) do
     t.integer  "height"
     t.integer  "size"
     t.text     "text"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "audio_attachment_embed"
   end
 
   create_table "users", :force => true do |t|

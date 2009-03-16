@@ -1,7 +1,9 @@
 <%- content_for :head do %>
   <h1><%= current_view_title(@item) %></h1>
 <%- end %>
-
-<%= render :partial => "tile", :locals => { :tile => @item } %>
-
-<%= render :partial => "tile", :collection => @item.children %>
+  <div id="tiles">
+    <%= render :partial => "tile", :locals => { :item => @item } %>
+  </div>
+<% @item.children.each do |item| %>
+  <%= render :partial => "tile", :locals => { :item => item } %>
+<% end %>

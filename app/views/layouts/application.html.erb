@@ -4,18 +4,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <title>trellissss</title>
-    <%= stylesheet_link_tag "reset" %>
-    <%= stylesheet_link_tag "fonts" %>
+    <!-- <%= stylesheet_link_tag "blueprint/print" %> -->
+    <!--[if IE]> <%= stylesheet_link_tag "blueprint/ie" %><![endif]-->
     <%= stylesheet_link_tag "application" %>
-
-
     <%= javascript_include_tag "jquery-1.2.6", "tiles" -%>
   </head>
   <body>
+    <div class="container">
+      
     <%= render :partial => "layouts/header" %>
 
     <%= yield -%>
     
     <%= render :partial => "layouts/footer" %>
+    
+    </div>
   </body>
 </html>

@@ -1,15 +1,15 @@
 module ItemsHelper
 
-  def tile_sizer item
-    
-    # size = item.children.size
-    # if size > 4
-    #   "big"
-    # elsif size <= 1
-    #   "small"
-    # end
-    
-  end
+  # def tile_sizer item
+  #   
+  #   # size = item.children.size
+  #   # if size > 4
+  #   #   "big"
+  #   # elsif size <= 1
+  #   #   "small"
+  #   # end
+  #   
+  # end
   
 
   def new_grid_helper(array, columns)
@@ -39,7 +39,7 @@ module ItemsHelper
     def insert(array)
       array.each do |item|
         raise "#{item} does not have a size" if item.size.nil?
-        raise "#{item} is too large!!" if item.width > @columns
+        raise "#{item} is too large!!" if item.size > @columns
         y, x = free_space_for(item.size)
         item.size.times do |row|
           item.size.times do |col|
@@ -51,7 +51,7 @@ module ItemsHelper
     end
 
     def free_space_for(size)
-      raise "#{item} is too large!!" if size > @columns
+      raise "#{size} is too large!!" if size > @columns
       result = false
       x, y = -1, 0
       while result == false

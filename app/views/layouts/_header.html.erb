@@ -1,13 +1,9 @@
-<div id="head">
-  <div id="head-id">
-    <%= yield :head %>
+<div class="span-24">
+  <div id="head-id" class="span-10">
+      <%= yield :head %>
   </div>
-  <div id="head-action">
-    <span style="margin-right: 20px;">
-    <!-- <small>logged in as <%= h(current_user.email) if logged_in?%> | <%= link_to "logout", logout_url %></small> -->
-    </span>
+  <div id="head-action" class="span-8 last">
     <%= link_to "new item", new_item_path, :class => "new_item" %>
     <%= link_to "exit", logout_url, :class => "exit" %>
   </div>
-  <div class="clear"></div>
 </div>

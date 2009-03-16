@@ -1,20 +1,11 @@
-<% columns = 3 %>
+<% columns = 10 %>
 <% grid_helper = new_grid_helper(@roots, columns) %>
 
 <table id="tiles">
 
-  <% grid_helper.each_slice(columns) do |items| %>
-    <tr>
-        <% items.each do |item| %>
-          <% unless item == (-1) || item == 0 || item.nil? %>
-            <%= render :partial => "items/tile", :locals => { :item => item } %>  
-          <% end %>
-          <% if item == 0 || item.nil? %>
-            <td>&nbsp;</td>
-          <% end %>
-        <% end %>
-    </tr>
+  <% for r in @roots%>
+    <%= render :partial => "items/tile", :locals => { :item => r } %>  
   <% end %>
-
+  
   <div class="clear"></div>
 </table>

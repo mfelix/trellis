@@ -1,12 +1,14 @@
-<td colspan="<%= item.size*2 %>" rowspan="<%= item.size*2 %>" class="tile" style="background: url(<%= item.file.url %>);">
+<div class="tile" style="background: url(<%= item.image ? item.image.url : '' %>)">
   <h2><%= item.title %></h2>
   <div class="action">
     <%= link_to '+', new_item_path %> 
   </div>
+
+  <%= item.audio_attachment_embed ? item.audio_attachment_embed : '' %>
   <div class="tags">
   <%= link_to 'Show', item %>
   <%= link_to 'Edit', edit_item_path(item) %>
   <%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
   </div>
   <%= render :partial => "items/microtile", :collection => item.children %>  
-</td>
+</div>
