@@ -1,7 +1,7 @@
 body {
   font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif;
   padding: 20px;
-  background-color: #fafafa;
+  background-color: #1e1e1e;
 }
 
 #head {
@@ -104,11 +104,16 @@ body {
       
   background: #ccc;
   -webkit-box-shadow: 3px 3px 3px #000;
-  border-top: 3px solid hotpink;
+  -webkit-border-radius: 5px;
+/*  border-top: 3px solid hotpink;*/
+  border: 1px solid #666;
   overflow: hidden;
   
 }
 
+.tile .interior {
+  margin: 10px;
+}
 
 .small {
   width: 80px !important;
@@ -122,30 +127,25 @@ body {
 
 .tile h2 {
   float: left;
-
+  margin: 0;
   padding: 2px 4px;
-  margin-bottom: 5px;
-  background-color: white; /* #FFFF66*/
-  font-size: 11px;
+  background-color: rgba(250,250,250,.75);
+  font-size: 10px;
   font-weight: bold;
-
-}
-
-.tile .tags {
-  clear: left;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.tile .tags a {
-  display: -moz-inline-box;
-  display: inline-block;
+  -webkit-border-radius: 3px;
   
-  padding: 2px 3px;
-  margin: 2px 2px 2px 0;
-  background-color: #ffffb7;
+}
+
+.tile .action {
+  display:none;
+}
+
+.tile .action a {
+  -webkit-border-radius: 3px;
+  padding: 2px 4px !important;
+  background-color: rgba(255,255,183,.9);
   color: #131313;
-  font-size: 9px;
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -158,6 +158,7 @@ body {
 }
 
 .action {
+  margin-top: -3px;
   float: right;
 }
 
@@ -172,11 +173,14 @@ body {
   color: white;
 }
 
+.tile .content {
+  margin-top: 20px;
+}
 .microtile {
-  clear: right;
   float: left;
-  width: 10em;
-  height: 10em;
+  width: 8em;
+  height: 8em;
+  padding: 10px;
   overflow: hidden;
   background-color: #131313;
   font-size: 9px;
@@ -184,4 +188,5 @@ body {
   color: white;
   display: block;
   margin: .5em;
+  -webkit-border-radius: 5px;
 }

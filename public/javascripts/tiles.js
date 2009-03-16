@@ -1,13 +1,14 @@
 $(document).ready(function(){
 
-  // $(".tile").hover(
-  //     function () {
-  //       $(this).append($("<span> ***</span>"));
-  //     }, 
-  //     function () {
-  //       $(this).find("span:last").remove();
-  //     }
-  //   );
+  $(".tile").hover(
+      function () {
+        $(this).find(".action").show();
+      }, 
+      function () {
+       $(this).find(".action").hide();
+      }
+    );
+  
   
 
 });

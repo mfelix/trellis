@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   
+  before_filter :login_required
+  
   layout 'application'
   
   # GET /items
