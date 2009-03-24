@@ -1,0 +1,5 @@
+Capfile
+config/deploy.rb
+public/files/*
+public/images/*
+log/*
