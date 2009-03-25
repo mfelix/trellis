@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
   # GET /items/new.xml
   def new
     @item = Item.new()
-    @collections = Collection.find(:all)
     
     respond_to do |format|
       format.html # new.html.erb
