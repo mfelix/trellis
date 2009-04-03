@@ -1,10 +1,10 @@
-
-
-<table id="tiles">
+<%- content_for :head do %>
+  <h1>root<%= current_view_title(@item) %></h1>
+<%- end %>
+<div id="tiles">
 
   <% for r in @roots%>
     <%= render :partial => "items/tile", :locals => { :item => r } %>  
   <% end %>
-  
-  <div class="clear"></div>
-</table>
+
+</div>

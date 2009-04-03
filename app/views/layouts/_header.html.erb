@@ -1,9 +1,10 @@
-<div class="span-24">
-  <div id="head-id" class="span-10">
+<div id="head" class="backbutton">
+  <div id="head-id">
       <%= yield :head %>
   </div>
-  <div id="head-action" class="span-8 last">
+  <div id="head-action">
     <%= link_to "new item", new_item_path, :class => "new_item" %>
-    <%= link_to "exit", logout_url, :class => "exit" %>
+    <%= link_to "logout", logout_url, :class => "exit" %>
   </div>
+  <div class="clear"></div>
 </div>

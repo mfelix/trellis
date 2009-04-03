@@ -1,4 +1,9 @@
-<div class="microtile">
-  <%= microtile.title %>
-  (<%= microtile.children.size %>)       
+<div class="microtile"  style="background-image: url(<%= microtile.image ? microtile.image.url : '' %>)">
+  <div class="interior">
+    <!-- <h3><%= microtile.title %></h3> -->
+    <!-- (<%= microtile.children.size %>) -->
+    
+       <%= render :partial => "items/nanotile", :collection => microtile.children %> 
+    
+  </div>
 </div>

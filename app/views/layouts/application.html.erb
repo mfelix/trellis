@@ -3,13 +3,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>trellissss</title>
+    <title>trellis</title>
     <!-- <%= stylesheet_link_tag "blueprint/print" %> -->
     <!--[if IE]> <%= stylesheet_link_tag "blueprint/ie" %><![endif]-->
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "jquery-1.2.6", "tiles" -%>
+    <%= javascript_include_tag "jquery-1.2.6", "tiles", "jquery.history" -%>
   </head>
-  <body>
+  <body style="background-image: url(<%= @background ? @background : '/images/bg.gif' %>)">
     <div class="container">
       
     <%= render :partial => "layouts/header" %>

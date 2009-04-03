@@ -2,8 +2,7 @@
   <h1><%= current_view_title(@item) %></h1>
 <%- end %>
   <div id="tiles">
-    <%= render :partial => "tile", :locals => { :item => @item } %>
+    <% @item.children.each do |item| %>
+      <%= render :partial => "tile", :locals => { :item => item } %>
+    <% end %>
   </div>
-<% @item.children.each do |item| %>
-  <%= render :partial => "tile", :locals => { :item => item } %>
-<% end %>
