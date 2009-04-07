@@ -1,10 +1,13 @@
 <div id="head" class="backbutton">
+  <a href="google.com">
   <div id="head-id">
       <%= yield :head %>
   </div>
   <div id="head-action">
-    <%= link_to "new item", new_item_path, :class => "new_item" %>
+    <a href="#" class="new_item jqModal">new item</a>
+    <!--<%= link_to "new item", new_item_path, :class => "new_item jqModal" %> -->
     <%= link_to "logout", logout_url, :class => "exit" %>
   </div>
+  </a>
   <div class="clear"></div>
 </div>

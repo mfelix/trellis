@@ -50,5 +50,9 @@ $(document).ready(function(){
       '.container': function() {  },
       '.edit': function() { /* do edit stuff */ }
     }));
+
     
+    //MODAL BITCHES
+    $('#dialog').jqm({ajax:'items/new/'});
+
 });

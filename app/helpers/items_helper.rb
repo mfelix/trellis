@@ -1,15 +1,29 @@
 module ItemsHelper
 
-  # def tile_sizer item
-  #   
-  #   # size = item.children.size
-  #   # if size > 4
-  #   #   "big"
-  #   # elsif size <= 1
-  #   #   "small"
-  #   # end
-  #   
-  # end
+  def tile_sizer item
+    
+    size = item.children.size
+    if size > 4
+      "size-2"
+    else
+      "size-1"
+    end
+    
+  end
+
+  def micro_tile_sizer item
+    psize = item.parent.size
+    
+    
+    size = item.children.size
+    if size > 4
+      "m-size-2"
+    else
+      "m-size-1"
+    end
+    
+
+  end
   
 
   def new_grid_helper(array, columns)

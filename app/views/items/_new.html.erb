@@ -1,24 +1,27 @@
-<h1>Editing item</h1>
+<h1>New item</h1>
 
 <% form_for @item, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
-
+  <%= hidden_field_tag :parent_id, params[:parent] %>
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :parent %><br />
+    <%= f.text_field :parent %>
   </p>
   <p>
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </p>
   <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
+    <%= f.label :audio_attachment_embed %><br />
+    <%= f.text_field :audio_attachment_embed %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Create" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @item %> |
 <%= link_to 'Back', items_path %>

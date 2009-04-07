@@ -1,35 +1,47 @@
 body {
   font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif;
-  padding: 20px;
-  background-color: #1e1e1e;
+  padding:0;
+  margin:0;
+  background: #1e1e1e url(/images/bg.gif);
+  font-size: 100%;
 }
 
 #head {
-  margin-bottom: 10px;
-  padding: 5px 10px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #010101;
 /*  border-bottom: 1px solid #ddd;*/
+}
+
+#head.hover {
+  background: yellow;
 }
 
 #head-id {
   float: left;
   width: 50%;
-  
-  background: inherit;
   text-align: left;
 }
 
 #head-id h1 {
+  opacity: 1;
+  float: left;
+  margin: 0;
+  padding: 3px 5px;
+  background-color: rgb(250,250,250);  
+  -webkit-border-radius: 5px;
   font-size: 18px;
   font-weight: bold;
+  color: #121212;
 }
 
 #head-id h1 .ancestor {
   font-weight: normal;
   margin-right: 10px;
-  color: #ccc;
-  padding-right: 12px;
+  color: #666;
+  padding-right: 16px;
   text-decoration: none;
-  background: url(/images/path_separator.png) no-repeat right 10px;
+  background: url(/images/path_separator.png) no-repeat right 9px;
 }
 
 #head-id h1 .ancestor:hover
@@ -41,19 +53,22 @@ body {
 #head-action {
   float: right;
   width: 50%;
-
-  background: inherit;
-
   text-align: right;
+  font-size: 12px;
 }
 
 #head-action a {
+  display:inline-block;
+  -webkit-border-radius: 5px;
   padding: 3px 5px;
   text-decoration: none;
+  color: #fafafa;
 }
 
 #head-action a.new_item {
-  color: green;
+  background-color: green;
+  font-weight: bold;
+  
 }
 
 #head-action a.new_item:hover {
@@ -62,7 +77,7 @@ body {
 }
 
 #head-action a.exit {
-  color: orange;
+  color: #333;
 }
 
 #head-action a.exit:hover {
@@ -76,64 +91,157 @@ body {
 
 #footer {
   clear: both;
-  padding: 5px 10px;
+  padding: 20px;
 /*  border-top: 1px solid #ddd;*/
-  color: #ccc;
+  color: #444;
   font-size: 9px;
 }
 
 #footer strong {
   font-weight: bold;
-  color: #aaa;
+  color: #666;
+}
+
+#footer em {
+  font-style: italic;
+  color: #685715;
+  font-family: Georgia;
 }
 
 
 #tiles {
-  margin-bottom: 10px;
-  margin-left: -3px;
-  margin-right: -3px;
- clear: both;
+  margin: 20px;
+  clear: both;
+}
+
+.container {
+  min-height: 600px;
 }
 
 .tile {
   float: left;
-  width: 20em;
-  height: 20em;
-
-  margin: 20px;
-      
+  margin-right: 5px;
+  margin-bottom: 5px;
   background: #ccc;
-  -webkit-box-shadow: 3px 3px 3px #000;
+  -webkit-box-shadow: 3px 3px 3px #111;
   -webkit-border-radius: 5px;
-/*  border-top: 3px solid hotpink;*/
-  border: 1px solid #666;
+/*  border: .125em solid #666;*/
+  border: 1px solid black;
   overflow: hidden;
-  
+  font-size: 100%;
+/*  position:relative;*/
+  text-align: center;
 }
 
+.tile a {
+  text-decoration: none;
+}
 .tile .interior {
   margin: 10px;
 }
 
+/* new tile paradigm */
+
+.size-1 {
+  width: 175px;
+  height: 187px;
+}
+
+.size-1 .microtile {
+  width:34px;
+  height:34px;
+}
+
+.size-1 .microtile .nanotile {
+  width:13px;
+  height:13px;
+}
+
+.size-1 .interior {
+/*  margin-left: 18px !important;*/
+}
+
+.size-2 {
+  width: 356px;
+  height: 380px;
+}
+
+.size-2 .microtile {
+  width:79px;
+  height:79px;
+}
+
+.size-2 .microtile .nanotile {
+  width:11px;
+  height:11px;
+}
+
+.size-2 .m-size-1 {
+  width: 37px;
+  height: 37px;
+}
+
+
+.size-2 .m-size-2 {
+  width: 79px;
+  height: 79px;
+}
+
+.size-2 .m-size-3 {
+  width: 37px;
+  height: 37px;
+}
+
+.size-2 .m-size-2 .nanotile {
+  width:13px;
+  height:13px;
+}
+
+
 .small {
-  width: 80px !important;
-  height: 80px !important;
+  width: 7em !important;
+  height: 9em !important;
+}
+
+.medium, .regular {
+  width: 225px;
+  height: 225px;  
 }
 
 .big {
-  width: 440px !important;
-  height: 440px !important;
+  width: 225px;
+  height: 225px;
+}
+
+.jumbo {
+  width: 450px;
+  height: 450px;
+}
+
+.tile .top {
+  margin: 0;
+  padding: 5px 10px;
+  background-color: rgb(12,12,12);
+  font-size: 10px;
 }
 
 .tile h2 {
   float: left;
-  margin: 0;
-  padding: 2px 4px;
-  background-color: rgba(250,250,250,.75);
-  font-size: 10px;
   font-weight: bold;
-  -webkit-border-radius: 3px;
-  
+  font-size: 10px;
+  margin: 0;
+  color: white;  
+}
+.tile a {
+  color: white;
+}
+.hover h2 {
+  color: black;
+}
+
+.tile:hover .top {
+  background-color: yellow !important;
+  color: black;
 }
 
 .tile .action {
@@ -141,52 +249,166 @@ body {
 }
 
 .tile .action a {
-  -webkit-border-radius: 3px;
-  padding: 2px 4px !important;
-  background-color: rgba(255,255,183,.9);
-  color: #131313;
+  margin: 0;
   font-size: 10px;
-  text-decoration: none;
 }
 
-.tile:hover {
-/*  border: 3px solid yellow;*/
-}
-
-.tile .tags a:hover {
-  background-color: white !important;
+.tile:hover, .microtile:hover {
+  border-color: yellow;
 }
 
 .action {
-  margin-top: -3px;
   float: right;
 }
 
 .action a {
-  padding: 3px 5px;
   color: green;
   text-decoration: none;
 }
 
-.action a:hover {
+
+.action .delete {
+  -webkit-border-radius: 3px;
+  background: url(/images/icon-delete.gif) no-repeat 1px 1px;
+  width: 10px;
+  height: 10px;
+  display:inline-block;
+}
+
+.action .delete:hover {
+  background-image: url(/images/icon-delete.gif);
+}
+
+.action .edit {
+  -webkit-border-radius: 3px;
+  color: #464646;
+  padding: 2px 3px;
+  margin-right: 2px;
+}
+
+.action .edit:hover {
   background: green;
   color: white;
 }
 
-.tile .content {
-  margin-top: 20px;
+.tile .children {
+  margin-left: -6px;
 }
+
+.tile .content {
+    text-align: left;
+}
+.tile .content .text{
+  font-size: 9px;
+  background: rgba(255,255,255, .75);
+  padding: 5px 10px;
+/*  -webkit-box-shadow: 0px 2px 2px #666;*/
+  margin: -10px -10px 10px -10px;
+  border-bottom: 1px solid #999;
+  height: 58px;
+  overflow: hidden;
+}
+
+.content .meta {
+  margin-top: 10px;
+  color: #999;
+  font-size: 9px;
+}
+
+.singleview .text{
+  font-size: 13px;
+  padding: 10px 20px;
+  background: rgba(255,255,255, .9);
+  height: 120px;
+  margin: -20px -20px 20px -20px;
+}
+
 .microtile {
   float: left;
-  width: 8em;
-  height: 8em;
-  padding: 10px;
   overflow: hidden;
-  background-color: #131313;
-  font-size: 9px;
-  opacity: .7;
   color: white;
   display: block;
-  margin: .5em;
+  background: #ccc;
+/*  -webkit-box-shadow: 3px 3px 3px #222;*/
   -webkit-border-radius: 5px;
+/*  border: 1px solid #aaa;*/
+  opacity: .25;
+  font-size: 100%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.microtile .interior {
+  margin: 5px 0 0;
+}
+
+.microtile h3 {
+  display: none;
+  opacity: 1;
+  float: left;
+  margin: 0;
+  padding: 2px 4px;
+  background-color: rgba(250,250,250,.75);
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+/*  -webkit-border-radius: 3px; */
+}
+
+.microtile:hover {
+  opacity: 1;
+}
+.microtile:hover h3 {
+  display:block;
+}
+
+.nanotile {
+  float: left;
+  overflow: hidden;
+  display: block;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  background-color: rgba(10,10,10,.35);
+/*  -webkit-border-radius: 3px;*/
+}
+
+
+/* */
+
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+	
+.jqmWindow {
+    display: none;
+    
+    position: fixed;
+    top: 17%;
+    left: 50%;
+    
+    margin-left: -300px;
+    width: 600px;
+    
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
 }

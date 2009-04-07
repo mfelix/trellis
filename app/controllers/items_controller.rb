@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-
+    @background = @item.image
     respond_to do |format|
       format.html # show.html.erb (also, erb sucks)
       format.xml  { render :xml => @item }
@@ -32,7 +32,8 @@ class ItemsController < ApplicationController
     @item = Item.new()
     
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :partial => "new", :layout => false }
+      format.js   { render :partial => "new", :layout => false }
       format.xml  { render :xml => @item }
     end
   end

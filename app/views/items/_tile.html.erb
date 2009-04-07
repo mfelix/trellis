@@ -15,8 +15,15 @@
 
   <div class="interior">
     <div class="content">
+      <% if item.text %>
+      <div class ="text">
+        <%= truncate(item.text, 128) %>
+      </div>
+      <% end %>
+    </div>
+    <div class="children">
       <%= render :partial => "items/microtile", :collection => item.children %>  
-      <%= item.audio_attachment_embed ? item.audio_attachment_embed : '' %>
+      <%= item.audio_attachment_embed ? item.audio_attachment_embed : '' %>    
     </div>
   </div>
   </a>

@@ -1,7 +1,20 @@
 <%- content_for :head do %>
   <h1><%= current_view_title(@item) %></h1>
 <%- end %>
-  <div id="tiles">
+  <div id="tiles" class="singleview">
+    <div class="interior">
+      <div class="content">
+        <% if @item.text %>
+        <div class ="text">
+          <%= @item.text %>
+          <div class="meta">
+            <%= @item.created_at %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
     <% @item.children.each do |item| %>
       <%= render :partial => "tile", :locals => { :item => item } %>
     <% end %>
