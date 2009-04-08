@@ -62,7 +62,17 @@ Rails::Initializer.run do |config|
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
   
-  require 'mail_config'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :tls                => true,
+    :domain             => "sevenpoundbuck.com",
+    :address            => 'smtp.gmail.com',
+    :authentication     => :plain,
+    :user_name          => "sevenpoundbuck@objcts.com",
+    :password           => "hypechicken337",
+    :port               => 587
+  }
+
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
   

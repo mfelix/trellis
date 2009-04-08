@@ -1,7 +1,8 @@
 module ItemsHelper
 
+  
   def tile_sizer item
-    
+
     size = item.children.size
     if size > 4
       "size-2"
@@ -9,6 +10,7 @@ module ItemsHelper
       "size-1"
     end
     
+    "size-2"
   end
 
   def micro_tile_sizer item

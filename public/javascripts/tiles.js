@@ -11,13 +11,15 @@ $(document).ready(function(){
 
   $(".tile").hover(
       function () {
-        $(this).find(".action").show();
+        $(this).find(".action").fadeIn(33);
         $(this).addClass("hover");
         $(this).find(".microtile").addClass("hover");
+        $(this).find(".text").animate({opacity:'1'},{queue:false,duration:77});
       }, 
       function () {
-       $(this).find(".action").hide();
+       $(this).find(".action").fadeOut(33);
         $(this).removeClass("hover");
+        $(this).find(".text").animate({opacity:'.25'},{queue:false,duration:77});
       }
     );
 
@@ -38,19 +40,46 @@ $(document).ready(function(){
           $(this).removeClass("hover");
         }
       );
+
+
+    $(".tile .children").hoverIntent(
+        function () {
+          $(this).animate({height:'280px', opacity:'.95'},{queue:false,duration:77});
+        }, 
+        function () {
+          $(this).animate({height:'30px', opacity:'.5'},{queue:false,duration:77});
+        }
+      );
         
-    $(".tile").click(function () {
-      $(".tile").fadeOut("fast");
-      window.location.href = $(this).find(".linker").attr("href");
-    });
+    $("#head, #head-id").click(
+      function () {
+        history.go(-1);
+      }
+      );
+        
 
-  
+
+    
+    //      
+    // 
+    // $(".tile .edit").click(
+    //   function () {
+    //    window.location.href = $(this).find(".edit").attr("href");
+    //  }
+    // );    
+    //   
+    $(".microtile").click(
+      function () {
+        window.location.href = $(this).find(".linker").attr("href");
+      }
+      );
+    
+            
     $('.container').click($.delegate({
-      '#head, #head-id': function() { history.go(-1); },
-      '.container': function() {  },
-      '.edit': function() { /* do edit stuff */ }
-    }));
-
+          '.tile': function() { window.location.href = $.find(".linker").attr("href"); }
+        }));
+    
+    
     
     //MODAL BITCHES
     $('#dialog').jqm({ajax:'items/new/'});

@@ -16,15 +16,25 @@
   <div class="interior">
     <div class="content">
       <% if item.text %>
-      <div class ="text">
-        <%= truncate(item.text, 128) %>
-      </div>
-      <% end %>
+          <div class="text">
+            <%= truncate(item.text, 1024) %>
+          </div>
+      <% end %>      
+      <% if item.audio_file_size %>
+          <div class="audio">
+            <p id="audioplayer_<%= item.id %>">Alternative content</p>  
+            <script type="text/javascript">  
+              AudioPlayer.embed("audioplayer_<%= item.id %>", {soundFile: "<%= item.audio.url %>"});  
+            </script>
+          </div>
+        <% end %>
     </div>
+    <% if item.children.size > 0 %>
     <div class="children">
-      <%= render :partial => "items/microtile", :collection => item.children %>  
-      <%= item.audio_attachment_embed ? item.audio_attachment_embed : '' %>    
+      <%= render :partial => "items/microtile", :collection => item.children %>
+      <div class="clear"></div>  
     </div>
+    <% end %>
   </div>
   </a>
 </div>

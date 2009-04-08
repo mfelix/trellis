@@ -8,20 +8,18 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :parent %><br />
-    <%= f.text_field :parent %>
+    <%= f.label :audio %><br />
+    <%= f.file_field :audio %>
   </p>
   <p>
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </p>
-  <p>
-    <%= f.label :audio_attachment_embed %><br />
+  <!-- <p>
+    <label>tumblr audio attach</label><br />
     <%= f.text_field :audio_attachment_embed %>
-  </p>
+  </p> -->
   <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
-
-<%= link_to 'Back', items_path %>

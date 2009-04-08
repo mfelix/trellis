@@ -1,5 +1,6 @@
 Capfile
 config/deploy.rb
+config/mail_config.rb
 public/files/*
 public/images/*
 log/*
