@@ -48,8 +48,6 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_trlls_session',
-    :secret      => "a55eece5e67a9536e8a4780be19fadcd0c14ecddf2d2466b58f4fb4f7db92cb1de654069207ee1c5f1b8886d7cfd098a4266c6568d4c13c10fecb1405fd6667b"
   }
 
   # Use the database for sessions instead of the cookie-based default,
@@ -64,13 +62,6 @@ Rails::Initializer.run do |config|
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :tls                => true,
-    :domain             => "sevenpoundbuck.com",
-    :address            => 'smtp.gmail.com',
-    :authentication     => :plain,
-    :user_name          => "sevenpoundbuck@objcts.com",
-    :password           => "hypechicken337",
-    :port               => 587
   }
 
   # Activate observers that should always be running
