@@ -6,19 +6,22 @@ module ApplicationHelper
   end
 
   def current_view_title(item)
+    path_string = link_to NAME+"&nbsp; &rsaquo;", root_url, :class => 'root ancestor'
+    
     if item
-      path_string = "<a class='ancestor' href= '" + 'http://localhost:3000' + "'>root</a>" 
+      # path_string = "<a class='ancestor' href= '" + 'http://localhost:3000' + "'>#{NAME}</a>" 
       if item.child?
         path = item.ancestors
          for p in path
-           path_string += "<a class='ancestor' href='" + item_url(p) + "'>" + p.title + "</a>"
+           path_string += "<a class='ancestor' href='" + item_url(p) + "'>" + p.title + "&nbsp; &rsaquo;</a>"
          end
-       path_string += item.title
+       path_string += "<a class='leaf'>" + item.title + "</a>"
       else
-        path_string += item.title
+        path_string += "<a class='leaf'>" + item.title + "</a>"
       end
-      path_string
+      
     end
+    path_string
   end
   
 end

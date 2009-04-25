@@ -1,20 +1,10 @@
-<h1>Listing items</h1>
+<%- content_for :head do %>
+  <h1><%= current_view_title(@item) %></h1>
+<%- end %>
+<div id="tiles">
+  <% @items %>
+  <% for r in @items%>
+    <%= render :partial => "items/tile", :locals => { :item => r } %>  
+  <% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
-
-<% for item in @items %>
-  <tr>
-    <td><%=h item.title %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New item', new_item_path %>
+</div>

@@ -7,10 +7,18 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.find(:all)
-
+    @items = User.find(current_user).items.roots.sort_by(&:updated_at).reverse
+    if @items.size == 1
+      
+    end
+        
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {
+        if @items.size <= 1
+          @item = Item.find(current_user.origin)
+          redirect_to(@item)
+        end
+      }
       format.xml  { render :xml => @items }
     end
   end
@@ -41,20 +49,27 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+    respond_to do |format|
+      format.js   { render :partial => "edit", :layout => false }
+    end
   end
 
   # POST /items
   # POST /items.xml
   def create
     @item = Item.new(params[:item])
-    current_user.items << @item
+    current_user.items << @item 
+    parent = params[:parent_id]
     
+    raise "cannot create new root" if parent.blank?
+       
     respond_to do |format|
       if @item.save
-        @item.move_to_child_of params[:parent_id] unless params[:parent_id].blank?
-        
+        if not parent.blank?
+          @item.move_to_child_of parent
+        end
         flash[:notice] = 'Item was successfully created.'
-        format.html { redirect_to(@item) }
+        format.html { redirect_to(@item.parent) }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new" }
@@ -84,8 +99,9 @@ class ItemsController < ApplicationController
   # DELETE /items/1.xml
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
-
+    if @item.user_id == current_user.id
+      @item.destroy
+    end
     respond_to do |format|
       format.html { redirect_to(items_url) }
       format.xml  { head :ok }

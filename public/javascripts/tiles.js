@@ -1,12 +1,5 @@
 $(document).ready(function(){
 
-  jQuery.delegate = function(rules) {
-    return function(e) {
-      var target = $(e.target);
-      for (var selector in rules)
-        if (target.is(selector)) return rules[selector].apply(this, $.makeArray(arguments));
-    }
-  }
 
 
   $(".tile").hover(
@@ -32,19 +25,19 @@ $(document).ready(function(){
       }
     );
 
-    $("#head").hover(
-        function () {
-          $(this).addClass("hover");
-        }, 
-        function () {
-          $(this).removeClass("hover");
-        }
-      );
+    // $("#head").hoverIntent(
+    //     function () {
+    //       $(this).addClass("hover");
+    //     }, 
+    //     function () {
+    //       $(this).removeClass("hover");
+    //     }
+    //   );
 
 
     $(".tile .children").hoverIntent(
         function () {
-          $(this).animate({height:'280px', opacity:'.95'},{queue:false,duration:77});
+          $(this).animate({height:'177px', opacity:'.95'},{queue:false,duration:77});
         }, 
         function () {
           $(this).animate({height:'30px', opacity:'.5'},{queue:false,duration:77});
@@ -56,10 +49,30 @@ $(document).ready(function(){
         history.go(-1);
       }
       );
+
+    $("ul.swatches li > *").live("click", function () {
+         var color = $(this).css("background-color");
+         $("#dialog .meta").css("background", color);
+         
+      });
         
 
+    $(".add_image_action").live("click", function(){
+         $(".add_image_form").fadeIn();
+         $(this).hide();
+       });
 
-    
+     $(".add_audio_action").live("click", function(){
+          $(".add_audio_form").fadeIn();
+          $(this).hide();
+        });
+
+        $(".add_text_action").live("click", function(){
+             $(".add_text_form").fadeIn();
+             $(this).hide();
+           });
+
+              
     //      
     // 
     // $(".tile .edit").click(
@@ -68,20 +81,21 @@ $(document).ready(function(){
     //  }
     // );    
     //   
-    $(".microtile").click(
-      function () {
-        window.location.href = $(this).find(".linker").attr("href");
-      }
-      );
     
-            
-    $('.container').click($.delegate({
-          '.tile': function() { window.location.href = $.find(".linker").attr("href"); }
-        }));
-    
+    $('.text').click(function(e) {
+      e.stopPropagation();
+    }); 
+    $('.audio').click(function(e) {
+      e.stopPropagation();
+    });
+        
+    $('.tile').click(function(e) {
+      e.stopPropagation();
+      
+      window.location.href = $(e.target).find(".linker").attr("href");
+    });
     
     
     //MODAL BITCHES
-    $('#dialog').jqm({ajax:'items/new/'});
-
+    $('#dialog').jqm({ajax:'@href', modal:true});
 });

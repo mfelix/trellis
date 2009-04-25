@@ -1,4 +1,4 @@
-<div class="microtile <%= micro_tile_sizer microtile %>"  style="background-image: url(<%= microtile.image ? microtile.image.url : '' %>)">
+<div class="microtile <%= micro_tile_sizer microtile %>"  style="background-image: url(<%= microtile.image ? microtile.image.url(:tiny) : '' %>)">
   <a class="linker" href="<%= item_path(microtile) %>">  
   <div class="interior">
     <!-- <h3><%= microtile.title %></h3> -->

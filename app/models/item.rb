@@ -6,7 +6,10 @@ class Item < ActiveRecord::Base
   belongs_to :user
   
   # has_attached_file :file
-  has_attached_file :image
+  has_attached_file :image, :styles => {
+        :tiny=> "80x80#",
+        :tile=> "380x380#"
+        }
   has_attached_file :audio
     
   acts_as_nested_set

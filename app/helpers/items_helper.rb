@@ -9,7 +9,6 @@ module ItemsHelper
     else
       "size-1"
     end
-    
     "size-2"
   end
 

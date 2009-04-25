@@ -1,25 +1,58 @@
-<h1>New item</h1>
-
 <% form_for @item, :html => { :multipart => true } do |f| %>
+  <div class="meta">
+    <div class="title">
+      <%= f.text_field :title %>
+    </div>
+    <div class="attributes">
+      <!-- <ul class="swatches">
+        <li><a href="#" class="swatch1"></a></li>
+        <li><a href="#" class="swatch2"></a></li>
+        <li><a href="#" class="swatch3"></a></li>
+        <li><a href="#" class="swatch4"></a></li>
+        <li><a href="#" class="swatch5"></a></li>
+        <li><a href="#" class="swatch6"></a></li>
+        <li><a href="#" class="swatch7"></a></li>
+        <li><a href="#" class="swatch8"></a></li>
+        <li><a href="#" class="swatch9"></a></li>
+        <li><a href="#" class="swatch10"></a></li>
+        <li><a href="#" class="swatch11"></a></li>
+        <li><a href="#" class="swatch12"></a></li>
+        <li><a href="#" class="swatch13"></a></li>
+        <li><a href="#" class="swatch14"></a></li>
+        <li><a href="#" class="swatch15"></a></li>
+        <li><a href="#" class="swatch16"></a></li>
+      </ul>  -->
+    </div>
+    <div class="clear"></div>  
+  </div>
   <%= f.error_messages %>
-  <%= hidden_field_tag :parent_id, params[:parent] %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :audio %><br />
-    <%= f.file_field :audio %>
-  </p>
-  <p>
-    <%= f.label :image %><br />
+  <%= hidden_field_tag :parent_id, params[:parent_id] %>
+  <ul class="palette">
+  <li class="add_text">
+    <a href="#" class="add_text_action">+ add words</a>
+    <div class="add_text_form">
+    <%= f.label :text %>
+    <%= f.text_area(:text) %>
+    </div>
+  </li>
+  <li class="add_image alt">
+    <a href="#" class="add_image_action">+ add picture</a>
+    <div class="add_image_form">
+    <%= f.label :image %>
     <%= f.file_field :image %>
-  </p>
-  <!-- <p>
-    <label>tumblr audio attach</label><br />
-    <%= f.text_field :audio_attachment_embed %>
-  </p> -->
-  <p>
+    </div>
+  </li>
+  <li class="add_audio">
+    <a href="#" class="add_audio_action">+ add sound</a>
+    <div class="add_audio_form">
+    <%= f.label :audio %>
+    <%= f.file_field :audio %>
+    </div>
+  </li>
+  </ul>
+  <div class="submit">
     <%= f.submit "Create" %>
-  </p>
+    <a href="#" class="cancel jqmClose">Cancel</a>
+  </div>
+  
 <% end %>

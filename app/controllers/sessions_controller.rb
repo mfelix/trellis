@@ -2,6 +2,7 @@
 class SessionsController < ApplicationController
   # render new.rhtml
   def new
+
   end
 
   def create
@@ -15,8 +16,9 @@ class SessionsController < ApplicationController
       self.current_user = user
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      redirect_back_or_default(items_url)
       flash[:notice] = "Logged in successfully"
+      
     else
       note_failed_signin
       @login       = params[:login]

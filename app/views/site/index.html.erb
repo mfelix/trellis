@@ -1,8 +1,8 @@
 <%- content_for :head do %>
-  <h1>root<%= current_view_title(@item) %></h1>
+  <h1><%= current_view_title(@item) %></h1>
 <%- end %>
 <div id="tiles">
-
+  <% @roots %>
   <% for r in @roots%>
     <%= render :partial => "items/tile", :locals => { :item => r } %>  
   <% end %>

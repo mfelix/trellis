@@ -4,7 +4,7 @@
   <div id="tiles" class="singleview">
     <div class="interior">
       <div class="content">
-        <% if @item.text %>
+        <% if not @item.text.blank? %>
             <div class="text">
               <%= @item.text %>
             </div>
